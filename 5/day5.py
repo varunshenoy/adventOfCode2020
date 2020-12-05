@@ -1,18 +1,11 @@
-def binaryFind(data, lowerHalfChar="F", upperHalfChar="B"):
+def binaryFind(data, lowerHalfChar, upperHalfChar):
     data = data.replace(lowerHalfChar, "0").replace(upperHalfChar, "1")
     return int(data, 2)
-    # med = int((low + hi) / 2)
-    # if low == hi:
-    #     return low
-    # elif data[0] == lowerHalfChar:
-    #     return binaryFind(data[1:], low, med, lowerHalfChar=lowerHalfChar, upperHalfChar=upperHalfChar)
-    # elif data[0] == upperHalfChar:
-    #     return binaryFind(data[1:], med + 1, hi, lowerHalfChar=lowerHalfChar, upperHalfChar=upperHalfChar)
 
 
 def findSeatID(seat):
-    r = binaryFind(seat[:7])
-    c = binaryFind(seat[7:], lowerHalfChar="L", upperHalfChar="R")
+    r = binaryFind(seat[:7], "F", "B")
+    c = binaryFind(seat[7:], "L", "R")
     return r * 8 + c
 
 
@@ -40,6 +33,10 @@ def main():
             continue
         IDs.append(findSeatID(seat))
 
+    # Part 1
+    print(max(IDs))
+
+    # Part 2
     print(findMyID(IDs))
 
 
