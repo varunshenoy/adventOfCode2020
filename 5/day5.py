@@ -15,6 +15,9 @@ def findSeatID(seat):
 
 
 def findMyID(seatIDs):
+
+    # no point in doing binary search since the list is so small lol
+
     seatIDs.sort()
     for i in range(len(seatIDs) - 2):
         thisSeat = seatIDs[i]

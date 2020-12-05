@@ -1,32 +1,32 @@
-# 1
+# Part 1
 
-# f = open("input.txt", "r")
+f = open("input.txt", "r")
 
-# content = f.read().split()
+content = f.read().split()
 
-# total = 0
+total = 0
 
-# for i in range(int(len(content)/3)):
-#     nums = content[3 * i].split("-")
-#     charac = content[3 * i + 1][0]
-#     string = content[3 * i + 2]
+for i in range(int(len(content)/3)):
+    nums = content[3 * i].split("-")
+    charac = content[3 * i + 1][0]
+    string = content[3 * i + 2]
 
-#     low = int(nums[0])
-#     hi = int(nums[1])
+    low = int(nums[0])
+    hi = int(nums[1])
 
-#     char_count = 0
-#     for c in string:
-#         if c == charac:
-#             char_count += 1
+    char_count = 0
+    for c in string:
+        if c == charac:
+            char_count += 1
 
-#     if (char_count >= low and char_count <= hi):
-#         total += 1
+    if (char_count >= low and char_count <= hi):
+        total += 1
 
-#     print(((low, hi), charac, char_count, string))
+    print(((low, hi), charac, char_count, string))
 
-# print(total)
+print(total)
 
-# 2
+# Part 2
 
 f = open("input.txt", "r")
 
