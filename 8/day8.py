@@ -4,8 +4,6 @@ def hasInfiniteLoop(data):
     counter = 0
 
     while True:
-        amt_to_add = 1
-
         # reached end of program
         if counter == len(data) - 1:
             return (False, accumulated)
@@ -22,7 +20,7 @@ def hasInfiniteLoop(data):
             continue
 
         visited_indices.add(counter)
-        counter += amt_to_add
+        counter += 1
 
 
 def findWrongInstr(data):
