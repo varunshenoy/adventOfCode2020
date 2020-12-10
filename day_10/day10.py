@@ -1,6 +1,3 @@
-from functools import lru_cache
-
-
 def part1(adapters):
 
     ones = 0
@@ -16,7 +13,7 @@ def part1(adapters):
 
 
 def part2(adapters):
-    dp = [0]*len(adapters)
+    dp = [0] * len(adapters)
 
     dp[0] = 1
     dp[1] = 1
@@ -28,8 +25,8 @@ def part2(adapters):
 
     for i in range(3, len(adapters)):
         for j in range(1, 4):
-            if adapters[i] - adapters[i-j] <= 3:
-                dp[i] += dp[i-j]
+            if adapters[i] - adapters[i - j] <= 3:
+                dp[i] += dp[i - j]
 
     return dp[-1]
 
